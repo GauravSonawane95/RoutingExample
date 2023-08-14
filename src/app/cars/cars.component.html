@@ -1,0 +1,33 @@
+<h1>Cars</h1>
+<table class="table">
+    <thead>
+        <tr class="text-center">
+            <!-- <th scope="col">#</th> -->
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Milage</th>
+            <th scope="col">Cylinders</th>
+            <th scope="col">Displacement</th>
+            <th scope="col">Horse Power</th>
+            <th scope="col">Weight</th>
+            <th scope="col">Acceleration(0-100)</th>
+
+            <th scope="col">Year</th>
+            <th scope="col">Origin Country</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="text-center" *ngFor="let car of cars" [ngClass]="{'active':car.id == precar}">
+            <td>{{car.id}}</td>
+            <td><a [routerLink]="['/vehicle',car.id]">{{car.Name}}</a></td>
+            <td>{{car.Miles_per_Gallon}}</td>
+            <td>{{car.Cylinders}}</td>
+            <td>{{car.Displacement}}</td>
+            <td>{{car.Horsepower}}</td>
+            <td>{{car.Weight_in_lbs}}</td>
+            <td>{{car.Acceleration}}</td>
+            <td>{{car.Year}}</td>
+            <td>{{car.Origin}}</td>
+        </tr>
+    </tbody>
+</table>
